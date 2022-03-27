@@ -1,0 +1,70 @@
+$avr-driver-logo-height: 45px;
+$avr-driver-header-spacing: $avr-space-xl;
+
+body {
+  background: none;
+}
+
+.container {
+  padding-top: $avr-space-xl;
+  padding-bottom: $avr-space-xl;
+}
+
+.header {
+  display: block;
+  margin: $avr-driver-header-spacing (- $avr-space-m);
+  padding: $avr-space-m;
+
+  @media (max-width: 767px) {
+    background: $avr-color-blue-50;
+    color: $avr-color-white;
+  }
+}
+
+.crushed-it {
+  width: 300px;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    text-align: left;
+  }
+
+  .header {
+    text-align: right;
+    margin: -$avr-driver-logo-height 0 $avr-driver-header-spacing 0;
+    padding: 0 0 0 182px;
+    line-height: $avr-driver-logo-height;
+  }
+
+  h2.spaced,
+  .page-section {
+    padding-top: $avr-driver-header-spacing;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      margin-top: -$avr-driver-header-spacing;
+      width: 100%;
+      border-bottom: 1px solid $table-border-color;
+    }
+  }
+}
+
+h2 + p + form {
+  margin-top: $avr-space-xl;
+}
+
+.col-md-6 h2 {
+  margin-top: 0;
+}
+
+// Styling of generic ajax request loading bar
+.page-loading-bar {
+  background: transparent;
+
+  .bar {
+    background-color: $avr-color-blue-50;
+  }
+}

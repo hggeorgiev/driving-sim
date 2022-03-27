@@ -1,0 +1,104 @@
+.editable-form-display-value,
+.display-value {
+  .avricon-pencil {
+    font-size: 14px;
+    visibility: hidden;
+  }
+
+  &:hover {
+    .avricon-pencil {
+      visibility: visible;
+    }
+  }
+}
+
+.avr-form-active > td {
+  vertical-align: top !important;
+}
+
+.avr-form-disabled {
+  .property-value,
+  .input-field {
+    a.editable {
+      display: inline-block;
+      pointer-events: none;
+    }
+  }
+
+  .editable-form-display-value {
+    cursor: initial;
+
+    .avricon.avricon-pencil {
+      visibility: hidden;
+    }
+  }
+}
+
+.avr-form-disabled,
+.avr-input.inline-editing.disabled {
+  .editable-form-display-value,
+  .display-value {
+    cursor: initial;
+
+    &:hover {
+      .avricon-pencil {
+        visibility: hidden;
+      }
+    }
+  }
+
+  [ng-click] {
+    cursor: initial;
+  }
+}
+
+.avr-editable-form {
+  .avr-input {
+    &.inline-editing.editing {
+      .edit-buttons {
+        display: none;
+      }
+
+      .input-field {
+        // We don't have to account for the edit buttons, set full width
+        width: 100%;
+      }
+    }
+
+    .form-horizontal & {
+      margin-bottom: 0;
+    }
+  }
+
+  &.inline-form {
+    .avr-input {
+      &.inline-editing.editing.has-label .input-field {
+        width: $two-thirds;
+      }
+    }
+  }
+}
+
+.editable-form-display-value {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+td,
+th {
+  .editable-form-buttons {
+    display: inline;
+  }
+}
+
+.editable-form-display-value-default {
+  .editable-form-display-value {
+    padding: 0;
+  }
+}
+
+.editable-form-buttons {
+  &__btn-check {
+    color: $avr-color-blue-50;
+  }
+}

@@ -1,0 +1,101 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+
+label {
+  font-weight: $avr-font-weight-normal;
+}
+
+.form-horizontal,
+.form-vertical {
+  .control-label-heading {
+    display: flex;
+    align-items: center;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+      flex-grow: 1;
+      margin: 0;
+    }
+  }
+}
+
+.form-horizontal {
+  // For nested forms, mixing styles
+  .form-vertical {
+    .control-label {
+      margin-bottom: 5px;
+    }
+  }
+
+  .control-label {
+    text-align: left;
+  }
+
+  .radio {
+    .control-label {
+      padding-top: 0;
+    }
+  }
+
+  .secondary-label,
+  .secondary-label label {
+    font-weight: $avr-font-weight-normal;
+  }
+
+  > h4 {
+    margin-top: 30px;
+  }
+
+  > h4:first-child,
+  .row > * > h4:first-child {
+    margin-top: 0;
+  }
+
+  fieldset + fieldset {
+    margin-top: 49px;
+  }
+}
+
+.form-inline {
+  .form-group + * {
+    margin-left: 15px;
+  }
+}
+
+.form-actions {
+  text-align: right;
+}
+
+// Text description of form value after input field, keeps padding aligned
+.input-supplement {
+  padding-top: 7px;
+  display: inline-block;
+}
+
+// No IE10+ native clear icon on text inputs AV-6260
+// https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-clear
+input[type=text]::-ms-clear {
+  display: none;
+}
+
+@import 'forms/form-help';
+@import 'forms/form-errors';
+@import 'forms/form-disabled';
+@import 'forms/form-required';
+@import 'forms/form-control';
+@import 'forms/datepicker';
+@import 'forms/textarea';
+@import 'forms/typeahead';
+@import 'forms/avr-input';
+@import 'forms/static-value';
+@import 'forms/input-phone';
+@import 'forms/input-date';
+@import 'forms/input-email';
+@import 'forms/input-radio';
+@import 'forms/editable-forms';
+@import 'forms/bulk-edit';
+@import 'forms/image-capture';
+@import 'forms/copy-value';

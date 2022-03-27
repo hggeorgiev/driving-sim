@@ -1,0 +1,11 @@
+/*
+  This is a workaround for a known issue in sass-loader: https://github.com/sass/sass/issues/1395
+  Related Bug: https://avrios.atlassian.net/browse/AV-15731
+  Sass parses strings according to the CSS spec, and the spec says to interpret Unicode escapes as Unicode characters.
+  This leads to unicode characters like  which in some cases (caching?) can be missinterpreted by the browser.
+  With the function below we always generate escaped unicode.
+*/
+
+@function unicode($str) {
+  @return unquote('\"') + unquote(str-insert($str, '\\', 1)) + unquote('\"');
+}

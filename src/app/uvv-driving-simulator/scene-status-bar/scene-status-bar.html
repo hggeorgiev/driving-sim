@@ -1,0 +1,27 @@
+<div class="scene-status-bar">
+  <div class="scene-status-bar__column">
+    <span class="scene-status-bar__indicator scene-status-bar__indicator--reaction"></span>
+
+    <span>Reaction distance</span>
+
+    <strong>{{scene?.reactionDistance?.value | number: '1.0-0' }}m</strong>
+  </div>
+  <div class="scene-status-bar__column">
+    <span class="scene-status-bar__indicator scene-status-bar__indicator--breaking"></span>
+
+    <span>Breaking distance</span>
+
+    <strong>{{scene?.breakingDistance?.value | number: '1.0-0' }}m</strong>
+  </div>
+  <div class="scene-status-bar__column">
+    <span>Stopping distance</span>
+
+    <strong>{{scene?.totalDistanceTravelled?.value | number: '1.0-0' }}m</strong>
+  </div>
+  <div class="scene-status-bar__column">
+    <i class="avricon avricon-timer"></i>
+    <span>Time to stop</span>
+
+    <strong>{{scene?.timeToStop | number: '1.0-0' }}s</strong>
+  </div>
+</div>

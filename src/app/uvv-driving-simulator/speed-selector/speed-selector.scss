@@ -1,0 +1,44 @@
+@import 'src/component-common';
+
+.speed-selector {
+  display: flex;
+
+  &__control {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  .speed-control-value {
+    display: flex;
+    align-items: baseline;
+    font-weight: $avr-font-weight-semibold;
+    padding: 4px $avr-space-l;
+    border-radius: 2px;
+    border: 2px solid transparent;
+    font-size: $avr-font-size-base;
+    background-color: $avr-color-blue-20;
+    color: $avr-color-blue-50;
+
+    @include mobile-only {
+      flex-grow: 1;
+      text-align: center;
+
+      span {
+        flex: 1;
+      }
+    }
+  }
+
+  .speed-control-btn {
+    color: $avr-color-blue-50;
+    font-size: 30px;
+    cursor: pointer;
+    padding: $avr-space-xs;
+    background: none;
+
+    &:disabled {
+      color: $avr-color-gray-40;
+    }
+  }
+}

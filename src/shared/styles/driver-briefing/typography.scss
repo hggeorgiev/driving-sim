@@ -1,0 +1,66 @@
+@import "../../../shared/styles/variables";
+@import "../../../shared/styles/mixins";
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+
+.driver-briefings {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.driver-briefing-static-content {
+  font-size: $avr-font-size-large;
+  line-height: 1.75em;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  h1 {
+    font-size: $font-size-h2;
+  }
+
+  h2 {
+    font-size: $font-size-h4;
+    margin-bottom: $avr-space-xl;
+  }
+
+  h3 {
+    font-size: $avr-font-size-large;
+    margin-bottom: $avr-space-xl;
+    line-height: 28px;
+  }
+
+  li {
+    padding-left: $avr-space-m;
+    margin-bottom: $avr-space-s;
+  }
+
+  ul,
+  ol {
+    padding-left: 28px;
+  }
+
+  ul,
+  p {
+    margin-bottom: $avr-space-xl;
+  }
+
+  hr {
+    margin: $avr-space-xl 0;
+  }
+
+  .alert-body {
+    font-size: $avr-font-size-base;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  &--tight {
+    li {
+      margin-bottom: $avr-space-xs;
+    }
+  }
+}

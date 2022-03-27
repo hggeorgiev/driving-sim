@@ -1,0 +1,9 @@
+.input-date {
+  .has-explanation {
+    .field-input {
+      flex-basis: calc(100% - 35px);
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.datepicker-noclear [ng-click='select(null, $event)'] {
+  display: none;
+}
+
+.uib-daypicker {
+  &:focus {
+    outline: none;
+  }
+
+  & > table {
+    margin: 5px 8px;
+    width: calc(100% - 16px);
+  }
+}
+
+.uib-datepicker-popup .uib-datepicker {
+  // Override new buttons design
+  .btn {
+    border-radius: 0;
+    background-image: none;
+    box-shadow: none;
+    border-color: transparent;
+    padding: {
+      top: 5px;
+      bottom: 5px;
+    }
+
+    // Due to a bug in uib-datepicker we need to disabled the highlighting
+    // of the "active" day (different from today)
+    // see https://github.com/angular-ui/bootstrap/issues/3879
+    &.btn-default.active:not(.btn-info) {
+      background-color: $avr-color-white;
+      border-color: transparent;
+    }
+
+    &:hover,
+    &.btn-default.active:not(.btn-info):hover {
+      background-color: $avr-color-gray-30;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &.btn-info {
+      background-color: $avr-color-blue-50;
+      border-color: transparent;
+
+      .text-muted {
+        color: $avr-color-blue-100;
+      }
+
+      .text-info {
+        font-weight: $avr-font-weight-semibold;
+        // text-info is the default class set on the active element
+        // but it has the !important value and I need to override it
+        color: $avr-color-white !important;
+      }
+    }
+  }
+}
+
+// Prevents datepicker from having red text in case of invalid date input
+.has-error .uib-datepicker-popup {
+  color: $text-color;
+}

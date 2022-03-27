@@ -1,0 +1,126 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: $avr-font-weight-semibold;
+
+  .small.text-muted {
+    color: $text-muted;
+  }
+}
+
+h1,
+.h1 {
+  margin-bottom: $avr-space-l;
+}
+
+h3,
+.h3 {
+  line-height: 1.5em;
+  margin-bottom: 15px;
+}
+
+.header-desc {
+  font-size: $avr-font-size-large;
+  line-height: 1.4;
+  margin-bottom: $avr-space-l;
+}
+
+.no-value {
+  @include text-empty;
+}
+
+.black {
+  color: $avr-color-brand-black;
+}
+
+.gray-dark {
+  color: $avr-color-gray-100;
+}
+
+.gray {
+  color: $avr-color-gray-75;
+}
+
+.de-em {
+  color: $avr-color-gray-50;
+}
+
+.text-placeholder {
+  font-size: $avr-font-size-small;
+  color: $avr-color-gray-50;
+  margin-bottom: $avr-space-xs;
+}
+
+.text-small {
+  font-size: $avr-font-size-small;
+}
+
+.text-danger {
+  color: $avr-color-red-75 !important;
+}
+
+.text-warning {
+  color: $avr-color-yellow-75 !important;
+}
+
+.text-info {
+  color: $avr-color-blue-75 !important;
+}
+
+.text-success {
+  color: $avr-color-green-75 !important;
+}
+
+.text-default {
+  color: $text-color !important;
+}
+
+h1,
+h2 {
+  .btn-group {
+    font-size: $avr-font-size-base;
+  }
+
+  .header-desc {
+    margin-bottom: 0;
+  }
+}
+
+b,
+strong {
+  font-weight: $avr-font-weight-semibold;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.spaced {
+  margin-top: $avr-space-xl;
+  margin-bottom: $avr-space-xxl;
+}
+
+.lead {
+  font-size: $font-size-large;
+  font-weight: $avr-font-weight-normal;
+  margin-bottom: (1.7 * $font-size-large - $font-size-large) / 2;
+  line-height: 1.7;
+}
+
+.title-bullet-link {
+  font-weight: $avr-font-weight-semibold;
+  font-size: $font-size-base;
+
+  &:before {
+    content: '\2022';
+  }
+}

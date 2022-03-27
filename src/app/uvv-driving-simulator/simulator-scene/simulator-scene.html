@@ -1,0 +1,23 @@
+<div class="simulator-scene">
+  <div class="simulator-scene__background">
+    <img class="vehicle-reaction"
+         src="assets/driver-briefing/uvv/images/road-safety/reactionTime/ds-vehicle-start.svg"/>
+    <div class="distance-arrow"
+         [ngStyle]="{width: 'calc('+(scene?.totalDistanceTravelled?.percentage)+'% - 80px)'}"></div>
+    <span class="vehicle-breaking" [ngStyle]="{'left': scene?.totalDistanceTravelled?.percentage +'%'}">
+          <img src="assets/driver-briefing/uvv/images/road-safety/reactionTime/ds-vehicle-en.svg"
+               class="driver-briefing-content-image driver-briefing-content-image--marginless"
+          />
+        </span>
+  </div>
+  <div class="simulator-scene__distance">
+    <div class="distance-bar distance-bar--reaction"
+         [ngStyle]="{width: scene?.reactionDistance?.percentage + '%'}">
+      <strong>{{scene?.reactionDistance?.value |  number: '1.0-0'  }}m</strong>
+    </div>
+    <div class="distance-bar distance-bar--breaking"
+         [ngStyle]="{width: scene?.breakingDistance?.percentage + '%'}">
+      <strong>{{scene?.breakingDistance?.value | number: '1.0-0'   }}m</strong>
+    </div>
+  </div>
+</div>

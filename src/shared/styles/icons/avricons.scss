@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'avricons';
+  src:
+    url('/assets/fonts/avricons.woff?er7hl7') format('woff'),
+    url('/assets/fonts/avricons.ttf?er7hl7') format('truetype'),
+    url('/assets/fonts/avricons.svg?er7hl7#avricons') format('svg');
+  /* stylelint-disable */
+  font-weight: normal;
+  /* stylelint-enable */
+  font-style: normal;
+}
+
+@import 'generated/avricons-variables';
+@import 'generated/avricons-classes';
+@import 'avricons-mixins';
+
+.avricon-link {
+  @extend %avricon-base;
+
+  position: relative;
+  padding-left: $avr-space-l;
+
+  &:before {
+    position: absolute !important;
+    left: 0;
+    top: calc(50% - 0.5em);
+  }
+
+  &.avricon-link-warning {
+    color: $avr-color-yellow-75;
+  }
+
+  &--success {
+    color: $avr-color-green-75;
+  }
+
+  &.avricon-link-icon-right {
+    padding-left: 0;
+    padding-right: $avr-space-l;
+
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &--inferior {
+    &:not(:hover) {
+      color: inherit;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--top {
+    &:before {
+      top: 0;
+    }
+  }
+}
+
+.avricon {
+  @extend %avricon-base;
+
+  & + .avricon {
+    margin-left: $avr-space-xs;
+  }
+}
+
+.avricon-add-circled {
+  font-size: 9px;
+  background-color: $avr-color-blue-50;
+  color: $avr-color-white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  padding: 2px;
+  vertical-align: text-bottom;
+  position: relative;
+  top: -1px;
+}
+
+.avricon-remove-filter {
+  height: 15px;
+  width: 15px;
+  line-height: 15px;
+  background-color: $avr-color-gray-50;
+  color: $avr-color-white;
+  font-size: 9px;
+  text-align: center;
+  border-radius: 50%;
+  transition: background-color 0.2s, transform 0.2s cubic-bezier(0.7, 0.01, 0, 2.8);
+
+  &:hover {
+    cursor: pointer;
+    background-color: $avr-color-gray-75;
+    transform: scale(1.2);
+  }
+}
+
+.avricon-drag-handle {
+  opacity: 0.3;
+}
+
+.icon-circled {
+  background: $avr-color-gray-30;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  // these margins are compensating for 19px line-height of a regular text
+  margin-top: -2px;
+  margin-bottom: -3px;
+}
+
+// Some vehicle icons are not named the same as the type, so here
+// we're mapping them and creating the classes
+$avr-vehicle-types: (
+  ('COST', 'cost', 'virtual'),
+  ('EXCAVATOR', 'excavator', 'excavator'),
+  ('CAR', 'car', 'car'),
+  ('SPECIAL', 'special', 'special'),
+  ('TRAILER', 'trailer', 'trailer'),
+  ('TRACTOR', 'tractor', 'tractor'),
+  ('VAN', 'van', 'transporter'),
+  ('TRUCK', 'truck', 'truck'),
+  ('INDUSTRIAL_TRUCK', 'industrial_truck', 'forklift'),
+  ('TWO_WHEELER', 'two_wheeler', 'motorcycle'),
+  ('BUS', 'bus', 'bus'),
+  ('BUILD_UP', 'build_up', 'build-up'),
+  ('unknown', 'unknown', 'unknown')
+);
+
+@each $type, $typeLowerCase, $icon in $avr-vehicle-types {
+  .vehicle-type-select .avricon-#{$type},
+  .vehicle-type-select .avricon-#{$typeLowerCase},
+  .vehicle-type-#{$type} {
+    @extend .avricon-#{$icon};
+  }
+}

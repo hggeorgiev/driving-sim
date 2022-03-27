@@ -1,0 +1,16 @@
+<div class="speed-selector">
+    <div class="speed-selector__control">
+        <button class="speed-control-btn btn btn-icon" [disabled]="speed == 30" (click)="changeSpeed(-10)">
+            <i class="avricon avricon-chevron-left"></i>
+        </button>
+        <div class="speed-control-value">
+            <span>{{speed}} km/h</span>
+        </div>
+        <button class="speed-control-btn btn btn-icon" [disabled]="speed == 140" (click)="changeSpeed(+10)">
+            <i class="avricon avricon-chevron-right"></i>
+        </button>
+    </div>
+    <div class="setting-state">
+        <img src="assets/driver-briefing/uvv/images/road-safety/reactionTime/speed-indicator/ds-speed-{{state}}.svg">
+    </div>
+</div>

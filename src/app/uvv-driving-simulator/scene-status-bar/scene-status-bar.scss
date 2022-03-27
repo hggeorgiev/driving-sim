@@ -1,0 +1,52 @@
+@import 'src/component-common';
+
+.scene-status-bar {
+  display: flex;
+  background-color: $avr-color-gray-20;
+  padding: $avr-space-s $avr-space-m;
+
+  span {
+    margin: 0 2px;
+  }
+  &__column {
+    padding-right: $avr-space-l;
+
+    @include mobile-only {
+      padding-right: $avr-space-s;
+    }
+
+    &:last-child {
+      margin-left: auto;
+      padding-right: 0;
+
+      @include mobile-only {
+        margin-left: 0;
+      }
+    }
+
+    i {
+      @include mobile-only {
+        display: none;
+      }
+    }
+  }
+
+  &__indicator {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+
+    &--reaction {
+      background-color: $avr-color-blue-100;
+    }
+
+    &--breaking {
+      background-color: $avr-color-yellow-50;
+    }
+
+    @include mobile-only {
+      display: none;
+    }
+  }
+}

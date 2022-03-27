@@ -1,0 +1,29 @@
+.driver-briefing-content-divider {
+  height: 1px;
+  color: $avr-color-gray-30;
+  background-color: $avr-color-gray-30;
+  border: none;
+}
+
+.driver-briefing-panel {
+  padding: $avr-space-m;
+  background: $avr-color-gray-20;
+  margin-bottom: $avr-space-xl;
+
+  &--success {
+    border-top: 4px solid $avr-color-green-50;
+  }
+
+  &--danger {
+    border-top: 4px solid $avr-color-red-50;
+  }
+
+  &__heading {
+    display: flex;
+    margin-top: $avr-space-s;
+  }
+}
+
+.driving-simulator-container {
+  padding: $avr-space-l 0;
+}

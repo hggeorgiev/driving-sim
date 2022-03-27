@@ -1,0 +1,18 @@
+.static-value {
+  margin-bottom: $avr-space-m;
+}
+
+@include tablet {
+  .static-value-label {
+    @include clearfix();
+
+    float: left;
+    width: $one-third;
+    margin-right: $avr-space-s;
+  }
+
+  .static-value {
+    width: $two-thirds;
+    margin-bottom: $avr-space-m;
+  }
+}

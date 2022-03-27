@@ -1,0 +1,38 @@
+.high-textarea-container {
+  textarea {
+    // 5 form rows
+    height: 230px;
+  }
+}
+
+.medium-textarea-container {
+  textarea {
+    // 3 form rows
+    height: 132px;
+  }
+}
+
+.textarea-placeholder {
+  position: relative;
+
+  textarea {
+    resize: vertical;
+    background: transparent;
+  }
+
+  .placeholder {
+    color: $input-color-placeholder;
+    position: absolute;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    border: 1px solid transparent;
+    background: $input-bg;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+textarea[readonly]:focus {
+  outline: none;
+}

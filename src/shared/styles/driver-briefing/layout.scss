@@ -1,0 +1,54 @@
+@import "../../../shared/styles/variables";
+@import "../../../shared/styles/media-breakpoints";
+@import "../../../shared/styles/z-index";
+
+.driver-briefings {
+  &-layout {
+    margin-top: $avr-driver-briefing-header-height;
+
+    @include tablet {
+      display: flex;
+      height: calc(100vh - #{$avr-driver-briefing-header-height});
+    }
+
+    &-menu {
+      position: fixed;
+      z-index: $z-index-layer-1;
+      width: $avr-driver-briefing-menu-width;
+      top: $avr-driver-briefing-header-height;
+      bottom: 0;
+      border-right: 1px solid $avr-color-gray-40;
+      left: -$avr-driver-briefing-menu-width;
+      transition: left $avr-animation-duration;
+      background-color: $avr-color-white;
+      overflow-y: scroll;
+
+      @include tablet {
+        position: relative;
+        top: 0;
+        left: 0;
+        flex: 0 0 $avr-driver-briefing-menu-width;
+      }
+
+      &--is-open {
+        left: 0;
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+      padding-top: $avr-space-m;
+
+      @include tablet {
+        overflow-y: scroll;
+      }
+
+      &__inner {
+        padding-left: $avr-space-m;
+        padding-right: $avr-space-m;
+        max-width: 792px;
+        margin: auto;
+      }
+    }
+  }
+}

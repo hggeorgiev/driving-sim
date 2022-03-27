@@ -1,0 +1,40 @@
+[ng-form],
+form {
+  .error-block {
+    display: none;
+
+    &.error-multiple-fields {
+      margin-top: 0;
+    }
+  }
+
+  .avr-editable-form {
+    .error-block.error-multiple-fields {
+      margin-top: -5px;
+    }
+  }
+
+  .error-block.error-custom {
+    // Always show custom errors as they are not necessarily integrated with ngModel
+    display: block;
+  }
+
+  $error-types: date float time required maxlength min max email minlength maxlength pattern parse;
+
+  @each $error in $error-types {
+    .has-error.invalid-#{$error} {
+      .error-#{$error} {
+        display: block;
+      }
+    }
+  }
+
+  // don't display individual required messages for "one of the fieldset inputs required" case
+  fieldset.all-required {
+    .has-error.invalid-required {
+      .error-required {
+        display: none;
+      }
+    }
+  }
+}

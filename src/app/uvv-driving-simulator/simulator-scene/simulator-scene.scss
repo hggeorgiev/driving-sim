@@ -1,0 +1,112 @@
+@import 'src/component-common';
+
+.simulator-scene {
+  &__background {
+    background-image: url(/assets/images/driver-briefing/images/uvv/road-safety/reaction-time/ds-background.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  &__distance {
+    display: flex;
+    border-top: 2px solid $avr-color-brand-black;
+    position: relative;
+  }
+
+  .distance-bar {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: $avr-font-size-small;
+    transition: width $avr-animation-duration;
+
+    @include mobile-only {
+      font-size: $avr-font-size-tiny;
+    }
+
+    &--reaction {
+      background-color: $avr-color-blue-100;
+      color: $avr-color-white;
+    }
+
+    &--breaking {
+      background: linear-gradient(to right, $avr-color-yellow-50 50%, $avr-color-white 90%);
+      color: $avr-color-red-100;
+
+      &:after {
+        content: '';
+        display: block;
+        height: 15px;
+        position: absolute;
+        bottom: 33px;
+        right: 0;
+        border-right: 2px solid $avr-color-brand-black;
+
+        @include mobile-only { // stylelint-disable-line max-nesting-depth
+          border-width: 1px;
+        }
+      }
+    }
+  }
+
+  .distance-arrow {
+    left: 40px;
+    height: 2px;
+    background: linear-gradient(to right, transparent 0%, $avr-color-gray-50 85%, $avr-color-gray-50 95%);
+    transition: width $avr-animation-duration;
+    margin-bottom: $avr-space-xs;
+
+    &:after {
+      content: '';
+      display: block;
+      margin-left: calc(100% - 5px);
+      margin-top: -2px;
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid $avr-color-gray-50;
+      border-top: 2px solid $avr-color-gray-50;
+      transform: rotate(45deg);
+
+      @include mobile-only {
+        content: unset;
+      }
+    }
+  }
+
+  .vehicle-reaction {
+    width: 40px;
+    height: 15px;
+    margin-bottom: -2px;
+
+    @include mobile-only {
+      width: 30px;
+    }
+  }
+
+  .vehicle-breaking {
+    margin-left: -50px;
+    transition: left $avr-animation-duration;
+    position: absolute;
+    line-height: 0;
+    bottom: 0;
+
+    img {
+      width: 55px;
+      height: 110px;
+    }
+
+    @include mobile-only {
+      width: 40px;
+      height: 90px;
+      margin-left: -35px;
+      bottom: -8px;
+    }
+  }
+}

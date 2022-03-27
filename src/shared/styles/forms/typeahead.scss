@@ -1,0 +1,26 @@
+[uib-typeahead] + .dropdown-menu {
+  max-height: 310px;
+  // scrollable typeahead dropdowns
+  overflow-y: auto;
+
+  .avr-input .input-labeled-field & {
+    width: calc(#{$two-thirds} - #{2 * $avr-space-m});
+  }
+
+  > li {
+    > a.dropdown-menu-custom-option {
+      white-space: normal;
+    }
+
+    &.active {
+      > a.dropdown-menu-custom-option.text-muted {
+        color: $avr-color-white;
+      }
+    }
+  }
+}
+
+.typeahead-group-header {
+  padding: 3px $avr-space-m;
+  color: $avr-color-gray-50;
+}

@@ -1,0 +1,547 @@
+// generic avr-input styles
+.avr-input {
+  position: relative;
+
+  .property-list & {
+    margin-bottom: $avr-space-xs;
+  }
+
+  .form-vertical &,
+  .form-horizontal & {
+    margin-bottom: $avr-space-m;
+
+    @include clearfix();
+
+    &.has-label {
+      // Conform to bootstrap form-group styling if inside form
+      margin-left: -$avr-space-m;
+      margin-right: -$avr-space-m;
+    }
+  }
+
+  .error-block {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    &:before {
+      @extend %avricon-base;
+      @extend .avricon-alert-circle;
+
+      margin-right: $avr-space-xs;
+    }
+  }
+
+  .input-label {
+    margin-bottom: 0;
+    padding: {
+      top: $form-label-padding-vertical;
+      bottom: $form-label-padding-vertical;
+    }
+  }
+
+  .input-label,
+  .input-labeled-field {
+    padding-left: $avr-space-m;
+    padding-right: $avr-space-m;
+  }
+
+  .display-value {
+    display: none;
+  }
+
+  .edit-buttons {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &--save {
+      color: $avr-color-blue-50;
+    }
+
+    &--cancel {
+      color: $avr-color-gray-75;
+    }
+
+    .btn {
+      padding: {
+        left: 8px;
+        right: 8px;
+      }
+    }
+  }
+
+  .file-upload {
+    .filename {
+      word-wrap: break-word;
+    }
+  }
+
+  .field-input {
+    // Each input checkbox used as the avr-input-checkbox component
+    // should have a spacing
+    .input-checkbox {
+      margin: $avr-space-xs 0;
+    }
+  }
+
+  // Inline editable version
+  &.inline-editing {
+    .display-value {
+      position: relative;
+      display: inline-block;
+      margin: 0 $avr-space-m;
+      float: left;
+      padding: {
+        top: $form-label-padding-vertical;
+        bottom: $form-label-padding-vertical;
+      }
+
+      word-wrap: break-word;
+      font-weight: $avr-font-weight-semibold;
+      max-width: 100%;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -$avr-space-xs;
+        bottom: 0;
+        left: -$avr-space-xs;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        transition: border-color $avr-animation-duration;
+      }
+
+      .avricon-pencil {
+        margin-left: 0.2em;
+        visibility: hidden;
+        color: $avr-color-blue-75;
+      }
+
+      span {
+        display: inline-block;
+        word-break: break-word;
+      }
+    }
+
+    &:not(.disabled) .display-value:hover {
+      &:before {
+        border-color: rgba($avr-color-blue-100, 0.3);
+
+        .avr-form-disabled & { // stylelint-disable-line max-nesting-depth
+          border-color: transparent;
+        }
+      }
+
+      .avricon-pencil {
+        visibility: visible;
+
+        .avr-form-disabled & { // stylelint-disable-line max-nesting-depth
+          visibility: hidden;
+        }
+      }
+    }
+
+    & + .input-field-additional {
+      display: none;
+    }
+
+    .input-field {
+      display: none;
+    }
+
+    &.editing {
+      .display-value,
+      .default-display-value {
+        display: none;
+      }
+
+      & + .input-field-additional {
+        display: block;
+      }
+
+      .edit-buttons {
+        display: block;
+      }
+
+      .input-field {
+        display: block;
+        padding-bottom: 5px;
+        width: calc(100% - 65px);
+      }
+
+      &.has-label .input-field {
+        width: calc(#{$two-thirds} - 50px);
+      }
+    }
+
+    .inline-input-field-additional:not(:empty) {
+      padding: 2px 0 2px 0;
+    }
+  }
+
+  /*************************************
+    Checkboxes without labels should be moved closer to pervious inputs
+   *************************************/
+
+  .form-horizontal & {
+    & > .input-field > field {
+      & > .checkbox-inline {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .form-horizontal &.has-label {
+    & > .input-field > field {
+      & > .checkbox-inline {
+        padding-top: 7px;
+      }
+    }
+  }
+
+  /* Loading indicator for initializing inputs */
+  .input-loading {
+    display: block;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: $padding-base-horizontal;
+      top: 50%;
+      margin-top: -8px;
+
+      @include spinner($color: $avr-color-blue-50);
+    }
+  }
+
+  .form-control-icon {
+    position: relative;
+
+    .form-control {
+      padding-right: $padding-base-horizontal * 2 + $avr-font-size-base;
+    }
+
+    .avricon {
+      position: absolute;
+      right: $padding-base-horizontal;
+      top: $padding-base-vertical;
+      color: $avr-color-gray-50;
+    }
+  }
+
+  // Responsive width for labels and form fields
+  @media (min-width: $screen-sm-min) {
+    .input-label {
+      float: left;
+      width: $one-third;
+    }
+
+    .input-labeled-field {
+      float: left;
+      width: $two-thirds;
+    }
+
+    .input-field-aligned {
+      margin-left: $one-third;
+    }
+
+    &.label-wide {
+      .input-label {
+        width: $two-thirds;
+      }
+
+      .input-labeled-field {
+        float: left;
+        width: $one-third;
+      }
+    }
+
+    &.label-with-description {
+      display: flex;
+
+      .input-field {
+        align-self: flex-end;
+        margin-bottom: $avr-space-base;
+      }
+    }
+  }
+
+  .has-explanation {
+    display: flex;
+
+    .field-input {
+      flex: 0 1 auto;
+    }
+
+    .explanation-icon {
+      flex: 0 0 35px;
+      max-height: 35px;
+      background: {
+        image: url('/shared/images/alerts/icon-info.svg');
+        size: 26px 26px;
+        repeat: no-repeat;
+        position: right center;
+      }
+    }
+  }
+}
+
+.form-horizontal .form-vertical .avr-input {
+  @media (min-width: $screen-sm-min) {
+    .input-label {
+      float: none;
+      width: 100%;
+    }
+
+    .input-labeled-field {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+// labels and values in property lists should always be displayed side by side
+.property-list:not(.property-list--horizontal) .avr-input {
+  .input-label {
+    float: left;
+    width: $one-third;
+    word-wrap: break-word;
+  }
+
+  .input-labeled-field {
+    float: left;
+    width: $two-thirds;
+  }
+
+  &.has-label .display-value {
+    // 30px margin
+    max-width: calc(#{$two-thirds} - 30px);
+  }
+}
+
+.property-list.property-list--horizontal .avr-input {
+  &.inline-editing.editing {
+    .input-field {
+      width: 100%;
+      min-height: 35px;
+    }
+
+    .edit-buttons {
+      box-shadow: 0 0 1px 0 rgba(76, 92, 102, 0.08), 0 4px 8px 0 rgba(76, 92, 102, 0.16);
+      top: 60px;
+      right: 25px;
+      z-index: $z-index-main;
+    }
+  }
+
+  .input-label {
+    color: $text-muted;
+
+    @media (min-width: $screen-sm-min) {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  .display-value {
+    min-height: 25px;
+    margin-bottom: $avr-space-s;
+    float: none;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .input-labeled-field {
+      float: none;
+      width: 100%;
+    }
+
+    .input-field-aligned {
+      margin-left: 0;
+    }
+
+    &.label-wide {
+      .input-label {
+        width: 100%;
+      }
+
+      .input-labeled-field {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.property-list.property-list--horizontal {
+  // Need all the properties to override the above defined edit-buttons styles
+  // In the horizontal list the textarea input should not have absolute edit-buttons
+  // because the input field can be resized and the buttons need to follow it
+  avr-input-text-area .avr-input.inline-editing.editing .edit-buttons {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-right: $avr-space-m;
+    width: 60px;
+    margin-left: auto;
+  }
+}
+
+.property-list.property-list--horizontal.row .avr-input {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+// Version in a table
+.table .avr-input.inline-editing {
+  margin-bottom: 0;
+
+  .display-value {
+    margin: 0;
+    padding: 0;
+    font-weight: $avr-font-weight-normal;
+  }
+
+  .edit-buttons {
+    right: 0;
+
+    .btn-sm {
+      padding: 5px 8px;
+    }
+  }
+
+  &.editing {
+    .input-field {
+      width: calc(100% - 68px);
+      padding-bottom: 0;
+    }
+
+    &.has-label {
+      .input-field {
+        width: calc(#{$two-thirds} - 68px);
+      }
+    }
+  }
+}
+
+.table .avr-input {
+  margin: 0;
+}
+
+.table-form .avr-input {
+  margin: 0;
+  padding: 0;
+}
+
+.avr-input-addon {
+  margin-top: -$avr-space-m;
+}
+
+.input-small {
+  @include tablet {
+    .avr-input .input-field {
+      width: 35%;
+    }
+  }
+}
+
+fieldset.avr-input {
+  .form-vertical &,
+  .form-horizontal & {
+    margin-bottom: $avr-space-xl;
+  }
+}
+
+// responsive width for labels and form fields
+@media (min-width: $screen-sm-min) {
+  .input-field-aligned {
+    margin-left: calc(#{$one-third} + #{$avr-space-s});
+  }
+}
+
+/*
+  MULTIPLE INPUT MODE styles
+
+  Used by date, time amount, currency amount and unit amount input components
+
+  Multiple field input components have to be wrapped into .input-multiple
+  class so that the fields gain correct widths and are displayed next to each other.
+*/
+.input-multiple,
+.avr-input .input-multiple {
+  width: 100%;
+  display: flex;
+
+  .input-multiple-part-medium {
+    width: 50%;
+  }
+
+  .input-multiple-part-large {
+    width: $two-thirds;
+  }
+
+  .input-multiple-part-small {
+    width: $one-third;
+  }
+
+  .input-multiple-part-medium,
+  .input-multiple-part-large,
+  .input-multiple-part-small {
+    margin-left: 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.input-description {
+  &:before {
+    @include clearfix();
+  }
+
+  margin-top: -10px;
+  margin-bottom: 13px;
+  width: 100%;
+  margin-left: 0;
+  color: $avr-color-gray-50;
+
+  .property-list:not(.property-list--horizontal) & {
+    width: auto;
+    margin-left: calc(#{$one-third} + #{$avr-space-s});
+  }
+
+  @include tablet {
+    .property-list:not(.property-list--horizontal) &,
+    .form-horizontal &,
+    .form-vertical & {
+      width: auto;
+      margin-left: calc(#{$one-third} + #{$avr-space-s});
+    }
+  }
+
+  &#{&}--checkbox,
+  &#{&}--no-label {
+    width: auto;
+    margin-left: 0;
+  }
+
+  &#{&}--checkbox {
+    margin-top: 0;
+    padding-left: $avr-space-xl;
+  }
+}
+
+.input-label {
+  .input-label-text.has-description {
+    font-weight: 600;
+  }
+
+  .input-label-description {
+    display: block;
+    padding-top: $avr-space-base;
+    font-size: $avr-font-size-small;
+  }
+}

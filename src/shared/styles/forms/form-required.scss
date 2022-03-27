@@ -1,0 +1,38 @@
+.label-required:after {
+  content: '*';
+  font-size: 0.85em;
+  font-weight: $avr-font-weight-semibold;
+  color: rgba($avr-color-red-75, 0.8);
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;
+  display: inline-block;
+  // width of the asterisk
+  margin-right: -7px;
+}
+
+.avr-input:not(.inline-editing) {
+  &.required {
+    & > label {
+      & > .input-label-text {
+        @extend .label-required;
+      }
+
+      &.empty-label > .input-label-text:after {
+        content: none;
+      }
+    }
+  }
+}
+
+.form-group {
+  &.required {
+    & > label {
+      @extend .label-required;
+
+      &.empty-label:after {
+        content: none;
+      }
+    }
+  }
+}

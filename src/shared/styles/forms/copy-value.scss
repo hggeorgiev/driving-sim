@@ -1,0 +1,65 @@
+$avr-copy-value-padding: 6px;
+
+.copy-value {
+  position: relative;
+  padding: $avr-copy-value-padding $avr-copy-value-padding $avr-copy-value-padding $padding-base-horizontal;
+  background: $avr-color-white;
+  border: 1px solid $input-border;
+  display: flex;
+
+  input {
+    flex: 1 1 100%;
+    border-color: transparent;
+    background: none;
+    color: $avr-color-gray-75;
+  }
+
+  textarea {
+    padding: $avr-copy-value-padding $avr-copy-value-padding $avr-copy-value-padding $padding-base-horizontal;
+    width: 100%;
+    border-color: transparent;
+    background: none;
+    resize: none;
+    color: $avr-color-gray-75;
+  }
+
+  .copy-value-toolbar {
+    flex: 0 1 auto;
+  }
+
+  &.copy-value-multiline {
+    display: block;
+    padding: 0;
+
+    .copy-value-toolbar {
+      background: $avr-color-gray-20;
+      padding: $avr-copy-value-padding;
+      text-align: right;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(-50%);
+
+    &.ng-enter {
+      opacity: 0;
+      transition: opacity $avr-animation-duration $avr-easing;
+
+      &.ng-enter-active {
+        opacity: 1;
+      }
+    }
+
+    &.ng-leave {
+      opacity: 1;
+      transition: opacity $avr-animation-duration $avr-easing;
+
+      &.ng-leave-active {
+        opacity: 0;
+      }
+    }
+  }
+}

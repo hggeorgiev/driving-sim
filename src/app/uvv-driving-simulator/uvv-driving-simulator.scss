@@ -1,0 +1,69 @@
+@import 'src/component-common';
+
+.uvv-driving-simulator {
+  margin-bottom: $avr-space-l;
+
+  &__settings {
+    border: 1px solid $avr-color-gray-40;
+    margin-bottom: $avr-space-l;
+  }
+
+  .simulator-settings__row {
+    padding: $avr-space-m $avr-space-l;
+    display: flex;
+    align-items: center;
+
+    @include mobile-only {
+      flex-wrap: wrap;
+      flex-basis: 100%;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $avr-color-gray-40;
+    }
+  }
+
+  .simulator-settings__label {
+    flex: 0 0 200px;
+    margin-right: $avr-space-m;
+
+    @include mobile-only {
+      flex-basis: 100%;
+      text-align: center;
+      margin-right: 0;
+    }
+  }
+
+  .simulator-settings__column {
+    flex: 1;
+
+    @include mobile-only {
+      flex-basis: 100%;
+    }
+  }
+
+  .radio-state-selector {
+    display: flex;
+    align-items: center;
+
+    .choice-question-answers {
+      flex: 1;
+
+      &__answer {
+        margin: $avr-space-xs;
+        font-size: $avr-font-size-base;
+
+        @include mobile-only { // stylelint-disable-line max-nesting-depth
+          display: flex;
+          margin: $avr-space-s 0;
+        }
+      }
+    }
+  }
+
+  @include mobile-only {
+    .setting-state {
+      display: none;
+    }
+  }
+}

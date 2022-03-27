@@ -1,0 +1,272 @@
+$avr-color-blue-10:            #f4faff;
+$avr-color-blue-20:            #e3f3fe;
+$avr-color-blue-30:            #bbe2fe;
+$avr-color-blue-40:            #65bdff;
+$avr-color-blue-50:            #009cff;
+$avr-color-blue-75:            #007dde;
+$avr-color-blue-100:           #014dad;
+
+$avr-color-green-10:           #f9fdf6;
+$avr-color-green-20:           #f0fae9;
+$avr-color-green-30:           #d9eec5;
+$avr-color-green-40:           #a6d978;
+$avr-color-green-50:           #7ec737;
+$avr-color-green-75:           #4cac2a;
+$avr-color-green-100:          #0b880c;
+
+$avr-color-red-10:             #fff8f9;
+$avr-color-red-20:             #ffebee;
+$avr-color-red-30:             #ffcdd4;
+$avr-color-red-40:             #ff7d8a;
+$avr-color-red-50:             #f73648;
+$avr-color-red-75:             #e70112;
+$avr-color-red-100:            #c1000d;
+
+$avr-color-yellow-10:          #fffcf3;
+$avr-color-yellow-20:          #fff5db;
+$avr-color-yellow-30:          #ffce47;
+$avr-color-yellow-40:          #ffce47;
+$avr-color-yellow-50:          #ffb700;
+$avr-color-yellow-75:          #fb9314;
+$avr-color-yellow-100:         #ec6d09;
+
+$avr-color-gray-10:            #f6fafc;
+$avr-color-gray-20:            #eef5f9;
+$avr-color-gray-30:            #e3ecf2;
+$avr-color-gray-40:            #cfe0e9;
+$avr-color-gray-50:            #9dbdcc;
+$avr-color-gray-75:            #82a0b0;
+$avr-color-gray-100:           #4c5c66;
+
+$avr-color-brand-black:        #292929;
+$avr-color-black:              #000;
+$avr-color-white:              #fff;
+
+$avr-color-white-alpha-10:     rgba($avr-color-white, 0.1);
+$avr-color-white-alpha-35:     rgba($avr-color-white, 0.35);
+$avr-color-white-alpha-50:     rgba($avr-color-white, 0.5);
+$avr-color-white-alpha-60:     rgba($avr-color-white, 0.6);
+$avr-color-white-alpha-70:     rgba($avr-color-white, 0.7);
+$avr-color-white-alpha-95:     rgba($avr-color-white, 0.96);
+
+$avr-color-black-alpha-05:     rgba($avr-color-black, 0.05);
+$avr-color-black-alpha-10:     rgba($avr-color-black, 0.1);
+$avr-color-black-alpha-15:     rgba($avr-color-black, 0.15);
+$avr-color-black-alpha-20:     rgba($avr-color-black, 0.2);
+$avr-color-black-alpha-25:     rgba($avr-color-black, 0.25);
+$avr-color-black-alpha-40:     rgba($avr-color-black, 0.4);
+$avr-color-black-alpha-50:     rgba($avr-color-black, 0.5);
+$avr-color-black-alpha-80:     rgba($avr-color-black, 0.8);
+
+// redefining and overriding bootstrap definitions
+$link-color:                   $avr-color-blue-75;
+$link-hover-color:             $avr-color-blue-100;
+$link-hover-decoration:        none;
+
+$text-color:                  $avr-color-gray-100;
+$text-muted:                  $avr-color-gray-75;
+
+$brand-primary:               $avr-color-blue-50;
+
+$brand-success:               $avr-color-green-50;
+$brand-info:                  $avr-color-blue-50;
+$brand-warning:               $avr-color-yellow-50;
+$brand-danger:                $avr-color-red-50;
+
+$state-success-text:          $avr-color-green-100;
+$state-success-bg:            $avr-color-green-20;
+$state-success-border:        $avr-color-green-40;
+
+$state-info-text:             $avr-color-blue-100;
+$state-info-bg:               $avr-color-blue-20;
+$state-info-border:           $avr-color-blue-40;
+
+$state-warning-text:          $avr-color-yellow-100;
+$state-warning-bg:            $avr-color-yellow-20;
+$state-warning-border:        $avr-color-yellow-40;
+
+$state-danger-text:           $avr-color-red-100;
+$state-danger-bg:             $avr-color-red-20;
+$state-danger-border:         $avr-color-red-40;
+
+$panel-primary-bg:            $brand-primary;
+$body-bg:                     $avr-color-white;
+$nav-link-hover-bg:           $avr-color-gray-20;
+$nav-tabs-link-hover-border-color: $nav-link-hover-bg;
+
+$border-radius-base:          0;
+
+// Inputs
+$input-color-placeholder:     $avr-color-gray-75;
+$input-border-radius-small:   2px;
+$input-border-radius:         2px;
+$input-border-radius-large:   2px;
+$input-color:                 $avr-color-brand-black;
+$input-border:                rgba($avr-color-blue-100, 0.3);
+$input-border-focus:          $avr-color-blue-50;
+$input-bg-disabled:           rgba($avr-color-gray-100, 0.06);
+$input-border-disabled:       rgba($avr-color-blue-100, 0.1);
+$input-bg-focus:              $avr-color-blue-10;
+$input-danger-border:         rgba($avr-color-red-50, 0.5);
+$input-danger-border-focus:   $avr-color-red-50;
+$input-danger-bg:             $avr-color-red-10;
+$input-group-addon-bg:        $avr-color-white;
+
+// navbar
+$navbar-inverse-bg:           $avr-color-blue-50;
+$navbar-inverse-link-active-bg: $avr-color-blue-40;
+$navbar-inverse-link-color:   $avr-color-gray-40;
+$navbar-inverse-link-hover-color: $avr-color-white;
+
+// main navigation
+$avr-main-navigation-width:         240px;
+$avr-main-navigation-header-height: 52px;
+
+$control-transition:          cubic-bezier(0.64, 0, 0.35, 1);
+
+// headings
+$headings-small-color:        inherit;
+
+// buttons
+$btn-border-radius-base:      2px;
+$btn-border-radius-large:     2px;
+$btn-border-radius-small:     2px;
+$btn-gradient:                linear-gradient(-180deg, $avr-color-white-alpha-10 0%, rgba(255, 255, 255, 0) 100%);
+
+$btn-default-bg:              transparent;
+$btn-default-border:          $avr-color-gray-50;
+$btn-default-color:           $avr-color-gray-100;
+$btn-default-active:          $avr-color-gray-75;
+$btn-default-shadow:          rgba($avr-color-gray-50, 0.2);
+$btn-default-gradient:        linear-gradient(to top, rgba(255, 255, 255, 0), $avr-color-white), linear-gradient(#f6f9fb, #f6f9fb);
+$btn-default-active-pressed:  $avr-color-gray-30;
+
+$btn-primary-bg:              $avr-color-blue-50;
+$btn-primary-border:          $avr-color-blue-75;
+$btn-primary-active:          $avr-color-blue-100;
+$btn-primary-shadow:          rgba($avr-color-blue-100, 0.2);
+
+$btn-success-bg:              $avr-color-green-50;
+$btn-success-border:          $avr-color-green-75;
+$btn-success-active:          $avr-color-green-100;
+$btn-success-shadow:          rgba($avr-color-green-100, 0.2);
+
+$btn-danger-bg:               $avr-color-red-50;
+$btn-danger-border:           $avr-color-red-75;
+$btn-danger-active:           $avr-color-red-100;
+$btn-danger-shadow:           rgba($avr-color-red-100, 0.2);
+
+// badges
+$badge-bg:                    $avr-color-gray-50;
+$badge-danger-light:          $avr-color-red-20;
+$badge-danger-dark:           $avr-color-red-100;
+$badge-font-weight:           600;
+$badge-slightly-transparent:  $avr-color-white-alpha-10;
+
+// Pools
+$pools-reservation-bg:          #798791;
+$pools-reservation-line-text:   #dce2e7;
+$pools-selectable-header-bg:    #edf7fe;
+
+// Table
+$table-bg-hover:                rgba(243, 247, 249, 0.75);
+$table-cell-padding:            10px;
+$table-condensed-cell-padding:  8px;
+$table-border-color:            $avr-color-gray-30;
+
+// Pagination
+$pagination-active-bg:          $avr-color-gray-30;
+$pagination-hover-bg:           $avr-color-white;
+$pagination-active-border:      $avr-color-gray-75;
+$pagination-hover-border:       $avr-color-gray-75;
+$pagination-color:              $avr-color-gray-100;
+$pagination-active-color:       $avr-color-gray-100;
+$pagination-hover-color:        $avr-color-gray-100;
+
+// font definitions
+$avr-font-size-large:         16px;
+$avr-font-size-base:          14px;
+$avr-font-size-smallish:      13px;
+$avr-font-size-small:         12px;
+$avr-font-size-tiny:          11px;
+$avr-font-weight-normal:      400;
+$avr-font-weight-semibold:    600;
+$avr-font-weight-bold:        700;
+$avr-font-family-sans-serif:  'Open Sans', sans-serif;
+$avr-font-family-serif:       'Open Sans', serif;
+
+$font-size-h2: 28px;
+
+// bootstrap font definitions
+$font-family-sans-serif:      $avr-font-family-sans-serif;
+$font-family-serif:           $avr-font-family-serif;
+
+// bootstrap iconography
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+// spacing
+$avr-space-base:              5px;
+$avr-space-xs:                $avr-space-base;
+$avr-space-s:                 $avr-space-base * 2;
+$avr-space-m:                 $avr-space-base * 3;
+$avr-space-l:                 $avr-space-base * 4;
+$avr-space-xl:                $avr-space-base * 5;
+$avr-space-xxl:               $avr-space-base * 8;
+
+$avr-sidebar-width:           percentage(0.14);
+$avr-cards-submenu-width:     percentage(0.2);
+$avr-content-padding:         $avr-space-m;
+
+$avr-navbar-height:           45px;
+
+// grid
+$grid-gutter-width:           2 * $avr-content-padding;
+$one-third:                   percentage(1/3);
+$two-thirds:                  percentage(2/3);
+
+// navbar
+$navbar-height:               $avr-navbar-height;
+
+// icon sizes
+$avr-icon-size-xs:            14px;
+$avr-icon-size-s:             16px;
+$avr-icon-size-sm:            18px;
+$avr-icon-size-m:             24px;
+$avr-icon-size-l:             32px;
+$avr-icon-size-xl:            48px;
+
+// animation settings
+$avr-easing:                  ease-in-out;
+$avr-animation-duration:      0.2s;
+
+$thumbnailRatio:              75%;
+$form-label-padding-vertical: 3px;
+
+// modal settings
+$modal-inner-padding:         $avr-space-l;
+$avr-modal-border-radius:     4px;
+
+// depth settings
+$avr-depth-z50-shadow:        0 4px 2px -3px rgba($avr-color-gray-100, 0.12);
+$avr-depth-z100-shadow:       0 2px 4px -2px rgba($avr-color-gray-100, 0.08), 0 3px 4px -2px rgba($avr-color-gray-100, 0.07), 0 6px 8px -2px rgba($avr-color-gray-100, 0.06);
+$avr-depth-z200-backdrop:     rgba($avr-color-brand-black, 0.1);
+$avr-depth-z200-shadow:       0 3px 2px -3px rgba($avr-color-gray-100, 0.2), 0 4px 5px -3px rgba($avr-color-gray-100, 0.16), 0 10px 17px -2px rgba($avr-color-gray-100, 0.12);
+$avr-depth-z300-backdrop:     rgba($avr-color-brand-black, 0.35);
+$avr-depth-z300-shadow:       0 4px 2px -4px rgba($avr-color-gray-100, 0.24), 0 8px 8px -4px rgba($avr-color-gray-100, 0.2), 0 16px 16px -2px rgba($avr-color-gray-100, 0.16);
+
+// Hamburger menu
+$hamburger-types:         'squeeze';
+$hamburger-layer-color:   $avr-color-brand-black;
+$hamburger-layer-width:   $avr-space-l;
+$hamburger-layer-height:  2px;
+$hamburger-layer-spacing: 4px;
+$hamburger-padding-x:     $avr-space-s;
+$hamburger-padding-y:     $avr-space-s;
+
+$avr-tree-line-color:             $avr-color-gray-40;
+$avr-tree-item-color:             $avr-color-gray-20;
+$avr-tree-item-color-hover:       $avr-color-gray-30;
+$avr-tree-item-spacing:           $avr-space-s;
+$avr-tree-item-padding:           $avr-space-s;
+$avr-tree-toolbar-icon-size:      $avr-font-size-base;
+$avr-tree-toolbar-icon-spacing:   6px;

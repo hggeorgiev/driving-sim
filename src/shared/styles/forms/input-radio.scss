@@ -1,0 +1,85 @@
+.input-radio {
+  position: relative;
+  padding-left: $avr-space-xl;
+
+  &:not(:last-child) {
+    margin-right: $avr-space-xl;
+  }
+
+  &__input {
+    // The radio button still needs to be visible to the browser
+    // for the validation to be working and for tabbing
+    position: absolute;
+    width: 0; // Hidding radio button for IE
+    appearance: none;
+    outline: none;
+
+    &:checked:not([disabled]) + .input-radio__label {
+      &:before {
+        border-color: $btn-primary-border;
+        box-shadow: 0 1px 1px 0 $btn-primary-shadow;
+        background-image: $btn-gradient;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &[disabled] {
+      + .input-radio__label:before {
+        box-shadow: none;
+        border-color: $avr-color-gray-30;
+        background-color: $avr-color-gray-20;
+        background-image: none;
+      }
+
+      &:checked + .input-radio__label:after {
+        opacity: 1;
+        background-color: $avr-color-gray-75;
+      }
+    }
+
+    &:focus {
+      + .input-radio__label:before {
+        border-color: $btn-primary-border;
+        box-shadow: 0 0 0 1px $btn-primary-border;
+      }
+
+      &:checked + .input-radio__label:before {
+        box-shadow: 0 0 0 1px $btn-primary-border;
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    height: 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $avr-color-gray-50;
+      box-shadow: 0 1px 1px 0 $btn-default-shadow;
+      background-image: $btn-default-gradient;
+      border-radius: 50%;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $btn-primary-bg;
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.image-capture-viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: block;
+  width: 100%;
+  z-index: $z-index-main;
+
+  /* we don't want $avr-color-brand-black here, as if any portion around the camera view is visible */
+  background: $avr-color-black;
+}
+
+.image-capture-stream {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.image-capture-actions {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+
+  & > .btn {
+    margin-right: $avr-space-s;
+    display: inline-block;
+  }
+}
+
+.image-capture-play-wrapper {
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.image-capture-error {
+  color: $avr-color-white;
+  margin: $avr-space-m;
+}
+
+.file-input-thumbnail.image-capture {
+  .file-upload-progress,
+  .file-upload-empty-state,
+  .image-capture-upload .file-upload-thumbnail {
+    height: auto;
+    padding-bottom: 0;
+    min-height: 200px;
+  }
+}

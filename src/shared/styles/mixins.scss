@@ -1,0 +1,258 @@
+@mixin clearlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// To be extended when general icon solution is found
+@mixin avr-icon($iconname, $size:$avr-icon-size-m, $padding: $avr-space-m, $right: false, $absolute: false) {
+  $imageUrl: 'src/main/webapp/shared/icons/#{$iconname}.svg';
+  $imageUrlRelative: '../../shared/icons/#{$iconname}.svg';
+
+  $itemPadding: $size + $padding;
+
+  @if $absolute {
+    position: absolute;
+
+    &:before {
+      left: 50%;
+      margin-left: -$size / 2;
+    }
+  }
+
+  @else {
+    position: relative;
+
+    &:before {
+      left: 0;
+    }
+
+    @if $right {
+      padding-right: $itemPadding;
+
+      &:before {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    @else {
+      padding-left: $itemPadding;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-image: url($imageUrlRelative);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: $size;
+    height: $size;
+    top: 50%;
+    margin-top: -$size / 2;
+  }
+}
+
+// Used for elements "floating" on the page
+@mixin floating {
+  box-shadow: 0 5px 9px 0 $avr-color-gray-40;
+}
+
+@mixin triangle ($size: $avr-space-base, $color: $avr-color-blue-50, $direction: down, $after: true) {
+  $selector: if($after, after, before);
+  $borderToColor: left;
+
+  @if $direction == up {
+    $borderToColor: bottom;
+  }
+
+  @else if $direction == down {
+    $borderToColor: top;
+  }
+
+  @else if $direction == left {
+    $borderToColor: right;
+  }
+
+  &:#{$selector} {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: $size solid transparent;
+    border-#{$borderToColor}: $size solid $color;
+  }
+}
+
+@mixin layoutBleed($spacing: $avr-space-m) {
+  margin-left: -$spacing;
+  margin-right: -$spacing;
+}
+
+@mixin layoutBleedVertical($spacing: $avr-space-m) {
+  margin-top: -$spacing;
+  margin-bottom: -$spacing;
+}
+
+@mixin text-empty {
+  font-style: italic;
+  color: $avr-color-gray-50;
+  font-weight: $avr-font-weight-normal !important;
+}
+
+@mixin vertical-background-line($offset, $thickness: 1px, $color: $avr-tree-line-color, $selector: before) {
+  position: relative;
+
+  &:#{$selector} {
+    content: '';
+    position: absolute;
+    left: $offset;
+    top: 0;
+    width: 0;
+    border-left: $thickness solid $color;
+    bottom: 0;
+  }
+}
+
+@mixin horizontal-background-line($offset, $width, $thickness: 1px, $color: $avr-tree-line-color, $selector: after) {
+  position: relative;
+
+  &:#{$selector} {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: $offset;
+    width: $width;
+    height: 0;
+    border-top: $thickness solid $color;
+  }
+}
+
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin animate-pulse($min, $max, $timing-function: linear, $duration: 3s, $iteration-count: infinite) {
+  @keyframes animate-pulse {
+    0% { transform: scale($min); }
+    15% { transform: scale($min); }
+    35% { transform: scale($max); }
+    65% { transform: scale($max); }
+    85% { transform: scale($min); }
+    100% { transform: scale($min); }
+  }
+
+  animation-name: animate-pulse;
+  animation-timing-function: $timing-function;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration-count;
+}
+
+@mixin animate-pulse-fade($min, $max, $timing-function: linear, $duration: 3s, $iteration-count: infinite) {
+  @keyframes animate-pulse-fade {
+    0% {
+      transform: scale($min);
+      opacity: 0;
+    }
+
+    15% {
+      transform: scale($min);
+      opacity: 0;
+    }
+
+    35% {
+      transform: scale($max);
+      opacity: 1;
+    }
+
+    65% {
+      transform: scale($max);
+      opacity: 1;
+    }
+
+    85% {
+      transform: scale($min);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale($min);
+      opacity: 0;
+    }
+  }
+
+  animation-name: animate-pulse-fade;
+  animation-timing-function: $timing-function;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration-count;
+}
+
+@mixin spinner($size: 16px, $spin-duration: 1s, $color: $avr-color-white, $center: false) {
+  display: block;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  border: 2px solid $color;
+  border-top-color: transparent;
+  animation: spin $spin-duration infinite linear;
+
+  @if ($center == true) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -$size / 2;
+    margin-top: -$size / 2;
+  }
+
+  @else {
+    position: static;
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+@mixin box-shadow-hover {
+  position: relative;
+  transition: transform $avr-animation-duration $avr-easing;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    box-shadow: $avr-depth-z200-shadow;
+    transition: opacity $avr-animation-duration $avr-easing;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+
+  // First level children should have position relative
+  // because the shadow covers the the parent box and
+  // without it everything inside is not clickable
+  > * {
+    position: relative;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

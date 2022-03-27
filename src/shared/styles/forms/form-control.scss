@@ -1,0 +1,69 @@
+// Override bootstrap styles
+.form-control {
+  position: relative;
+  box-shadow: 0 0 0 12px rgba($avr-color-brand-black, 0);
+  transition: border-color ease-in-out 0.15s;
+  caret-color: $avr-color-blue-50;
+  margin-bottom: 0;
+
+  &:focus {
+    // When we have two inputs near each other the active one should have the
+    // box-shadow not cut down
+    z-index: $z-index-main;
+    box-shadow: 0 0 0 1px $input-border-focus;
+    transition: all 0.24s $control-transition;
+    background-color: $input-bg-focus;
+  }
+
+  .has-error & {
+    box-shadow: 0 0 0 12px rgba($avr-color-brand-black, 0);
+    border-color: $input-danger-border;
+    background-color: $input-danger-bg;
+    caret-color: $input-danger-border;
+
+    &:focus {
+      border-color: $input-danger-border-focus;
+      box-shadow: 0 0 0 1px $input-danger-border-focus;
+    }
+
+    ~ .input-group-addon {
+      background-color: $input-danger-bg;
+      border-color: $input-danger-border;
+      color: $avr-color-red-75;
+    }
+  }
+
+  // Use ng-valid to prevent date time component from highlighting valid inputs on error
+  .has-error &:not(&--novalidate).ng-valid {
+    border-color: $input-border;
+    background-color: $input-bg;
+
+    &:focus {
+      border-color: $input-border-focus;
+      box-shadow: 0 0 0 1px $input-border-focus;
+      background-color: $input-bg-focus;
+    }
+
+    ~ .input-group-addon {
+      background-color: $input-group-addon-bg;
+      border-color: $input-group-addon-border-color;
+      color: $input-color;
+    }
+  }
+
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    color: $avr-color-gray-75;
+    border-color: $input-border-disabled;
+
+    ~ .input-group-addon {
+      border-color: $input-border-disabled;
+      background-color: rgba($avr-color-gray-100, 0.06);
+
+      .has-error & {
+        background-color: $input-danger-bg;
+      }
+    }
+  }
+}

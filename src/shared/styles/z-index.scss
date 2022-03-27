@@ -1,0 +1,33 @@
+// Boostraps z-index variables, don't override!
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-above-modal:       1051 !default;
+$zindex-above-backdrop:    1052 !default;
+
+$z-index-layer-1: 1;
+$z-index-layer-2: 2;
+$z-index-layer-3: 3;
+$z-index-layer-4: 4;
+$z-index-layer-5: 5;
+
+$z-index-main: $z-index-layer-1;
+$z-index-intercom: $z-index-layer-5;
+$z-index-navigation: $z-index-layer-5;
+$z-index-tooltip: $z-index-layer-5;
+$z-index-loading-bar: 10;
+
+// By default bootstrap sets it to 1060 which is larger than
+// the modal and modal-background which in our case shouldn't be
+$z-index-popover: 1035;
+
+// We have an overlay which needs to cover all elements when the
+// context menu is opened
+$z-index-context-menu: 1036;
+
+// Make sure google maps autocomplete is on top all elements and on top the modal overlay
+$z-index-google-maps-autocomplete: 1051;

@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins';
+@import 'src/shared/styles/driver-briefing/app.scss';
+@import 'src/shared/styles/icons/avricons';
+@import 'src/shared/styles/layout';
+@import 'src/shared/styles/typography';
+@import 'src/shared/styles/simple-layout';
+@import 'src/shared/styles/forms';
+@import 'src/shared/styles/variables';
+@import 'src/shared/styles/media-breakpoints';
+@import 'src/shared/styles/mixins';

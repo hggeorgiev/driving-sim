@@ -1,0 +1,45 @@
+.has-error {
+  color: $avr-color-red-75;
+
+  .error-block {
+    color: $avr-color-red-75;
+  }
+}
+
+input[readonly] {
+  background-color: $avr-color-white !important;
+  cursor: text !important;
+}
+
+// disabled styling for radiobuttons
+.radio,
+.radio-inline {
+  input[disabled] {
+    &,
+    & + * {
+      cursor: $cursor-disabled;
+    }
+  }
+}
+
+fieldset[disabled=disabled] {
+  .form-group {
+    opacity: 1;
+  }
+}
+
+.avr-input {
+  &.disabled {
+    .ui-select-match {
+      .btn {
+        opacity: 1;
+      }
+    }
+
+    .ui-select-placeholder {
+      &.text-muted {
+        color: $avr-color-gray-75;
+      }
+    }
+  }
+}

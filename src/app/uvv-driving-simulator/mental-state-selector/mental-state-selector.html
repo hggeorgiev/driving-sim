@@ -1,0 +1,17 @@
+<div class="mental-state-selector radio-state-selector">
+    <div class="choice-question-answers">
+        <label *ngFor="let option of stateOptions"
+              [ngClass]="{'choice-question-answers__answer--SELECTED': option === state}"
+               class="choice-question-answers__answer choice-question-answers__answer--inline">
+            <input type="radio"
+                   [(ngModel)]="state"
+                   [value]="option"
+                   (ngModelChange)="onChange.emit(option)"
+            />
+            <span>{{stateOptionsMap[option] }}</span>
+        </label>
+    </div>
+    <div class="setting-state">
+        <img src="assets/driver-briefing/uvv/images/road-safety/reactionTime/mental-state/ds-mental-state-{{state}}.svg">
+    </div>
+</div>

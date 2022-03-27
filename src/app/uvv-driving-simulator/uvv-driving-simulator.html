@@ -1,0 +1,33 @@
+<div class="uvv-driving-simulator">
+    <div class="uvv-driving-simulator__settings">
+        <div class="simulator-settings__row">
+            <div class="simulator-settings__label">
+                <strong>Vehicle Speed</strong>
+            </div>
+            <div class="simulator-settings__column">
+                <speed-selector [value]="state?.settings?.vehicleSpeed" (onChange)="setSetting($event, settingType.VEHICLE_SPEED)"></speed-selector>
+            </div>
+        </div>
+        <div class="simulator-settings__row">
+            <div class="simulator-settings__label">
+                <strong>Mental State</strong>
+            </div>
+            <div class="simulator-settings__column">
+                <mental-state-selector [state]="state?.settings?.driverState" (onChange)="setSetting($event, settingType.DRIVER_STATE)"></mental-state-selector>
+            </div>
+        </div>
+        <div class="simulator-settings__row">
+            <div class="simulator-settings__label">
+                <strong>Road Condition</strong>
+            </div>
+            <div class="simulator-settings__column">
+                <road-condition-selector [state]="state?.settings?.roadCondition" (onChange)="setSetting($event, settingType.ROAD_CONDITION)"></road-condition-selector>
+            </div>
+        </div>
+    </div>
+
+    <div class="uvv-driving-simulator__scene">
+        <scene-status-bar [scene]="state?.scene"></scene-status-bar>
+        <simulator-scene [scene]="state?.scene"></simulator-scene>
+    </div>
+</div>

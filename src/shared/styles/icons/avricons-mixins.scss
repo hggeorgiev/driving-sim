@@ -1,0 +1,28 @@
+%avricon-base {
+  display: inline-block;
+
+  /* stylelint-disable */
+  &:before {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline;
+    font-family: 'avricons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* stylelint-enable */
+
+  // Fix for IE removing underline on icons (adding and removing text-decoration helps)
+  &:before,
+  &:hover:before {
+    text-decoration: none;
+  }
+}

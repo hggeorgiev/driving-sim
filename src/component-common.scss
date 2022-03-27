@@ -1,0 +1,17 @@
+// Should only be used for component based styles
+// NOTE: don't include any files that include classes
+// as this will result having duplicated css properties
+
+// Boostrap
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins';
+
+// Avricons
+@import 'shared/styles/icons/avricons-mixins';
+@import 'shared/styles/icons/generated/avricons-variables';
+
+// Avrios
+@import 'shared/styles/variables';
+@import 'shared/styles/mixins';
+@import 'shared/styles/z-index';
+@import 'shared/styles/media-breakpoints';

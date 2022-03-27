@@ -1,0 +1,41 @@
+.form-group .help-block {
+  color: $avr-color-gray-75;
+  display: block;
+  white-space: normal;
+}
+
+.avr-input-hint {
+  font-size: $avr-font-size-smallish;
+  margin: 0 (-$avr-space-m) $avr-space-m (-$avr-space-m);
+
+  &--above {
+    margin-bottom: $avr-space-base;
+  }
+
+  .help-block {
+    margin-top: -$avr-space-s;
+    padding-left: $avr-space-m;
+    padding-right: $avr-space-m;
+    color: $avr-color-gray-75;
+
+    @include tablet {
+      margin-left: $one-third;
+      width: $two-thirds;
+    }
+  }
+}
+
+.form-subsection {
+  background: $avr-color-gray-20;
+  margin-bottom: $avr-space-m;
+  padding: $avr-space-m $avr-space-s 0.1px $avr-space-s;
+
+  & > h4:first-child {
+    margin-top: 0;
+  }
+
+  .input-label-after {
+    line-height: 34px;
+    vertical-align: middle;
+  }
+}
